@@ -1,0 +1,1605 @@
+```html
+<!DOCTYPE html>
+<html lang="sq" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adoor Properties | Kuratorë të Pronave Ekskluzive në Shqipëri & Bregdet</title>
+    <meta name="description" content="Adoor Properties - Agjenci imobiliare luksoze në Tiranë dhe Bregdetin Shqiptar. Vila ekskluzive, penthouse panoramikë dhe investime të verifikuara.">
+
+    <!-- Google Fonts: Cormorant Garamond (Editorial Serif) & Plus Jakarta Sans (Modern Clean) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        alabaster: '#FAF8F5',
+                        linen: '#F3EFEA',
+                        obsidian: '#111214',
+                        charcoal: '#1B1D21',
+                        bronze: {
+                            300: '#DEC398',
+                            400: '#C9A874',
+                            500: '#B8925A',
+                            600: '#9A7642',
+                            700: '#7A5B30'
+                        },
+                        forest: '#1C2E2A'
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'editorial': '0 24px 60px -15px rgba(17, 18, 20, 0.08)',
+                        'bronze': '0 14px 30px -8px rgba(184, 146, 90, 0.35)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Stile të personalizuara editoriale për Adoor Properties */
+        .bronze-gradient {
+            background: linear-gradient(135deg, #C9A874 0%, #B8925A 55%, #9A7642 100%);
+        }
+        .bronze-gradient:hover {
+            background: linear-gradient(135deg, #DEC398 0%, #C9A874 55%, #A68049 100%);
+        }
+        .bronze-text {
+            background: linear-gradient(135deg, #DEC398 0%, #B8925A 65%, #9A7642 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .header-transparent {
+            background: transparent;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+        }
+        .header-scrolled {
+            background: rgba(250, 248, 245, 0.94);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(184, 146, 90, 0.22);
+            box-shadow: 0 10px 30px -10px rgba(17, 18, 20, 0.08);
+        }
+        @keyframes heroPan {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.06); }
+            100% { transform: scale(1); }
+        }
+        .animate-hero {
+            animation: heroPan 26s ease-in-out infinite;
+        }
+        .property-card:hover .property-img {
+            transform: scale(1.06);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #FAF8F5; }
+        ::-webkit-scrollbar-thumb { background: #B8925A; border-radius: 999px; }
+    </style>
+</head>
+<body class="bg-alabaster text-obsidian font-sans antialiased selection:bg-bronze-500 selection:text-white overflow-x-hidden">
+
+    <!-- =========================================================================
+         KONFIGURIMI KRYESOR I ADOOR PROPERTIES (Ndryshoni këto të dhëna lehtësisht)
+         ========================================================================= -->
+    <script>
+        const ADOOR_CONFIG = {
+            brandName: "Adoor",
+            brandTagline: "PROPERTIES",
+            // Vendosni numrin e WhatsApp-it pa '+' dhe pa hapësira (p.sh. 355691234567)
+            whatsappNumber: "355690000000",
+            phoneDisplay: "+355 69 00 00 000",
+            email: "info@adoorproperties.al",
+            address: "Kompleksi Delijorgji / Blloku, Tiranë, Shqipëri",
+            instagramUrl: "https://instagram.com",
+            // Kodi PIN për të hapur Panelin e Agjentes (mund ta ndryshoni sipas dëshirës)
+            adminPin: "2026"
+        };
+    </script>
+
+    <!-- =========================================================================
+         HEADER TRANSPARENT -> GLASSMORPHIC NË SCROLL
+         ========================================================================= -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 header-transparent text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20 lg:h-24">
+                <!-- Logoja Arkitekturore me A dhe Kurorë Minimaliste -->
+                <a href="#kryefaqja" class="flex items-center gap-3.5 group">
+                    <div id="logo-badge" class="w-11 h-11 rounded-xl border border-bronze-400/70 bg-obsidian/70 backdrop-blur-md flex items-center justify-center shadow-bronze group-hover:border-bronze-400 transition">
+                        <svg class="w-6 h-6 text-bronze-400" viewBox="0 0 36 36" fill="none">
+                            <!-- Kurora minimaliste arkitekturore sipër -->
+                            <path d="M12 8.5L15 11L18 7.5L21 11L24 8.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <!-- Shkronja A gjeometrike -->
+                            <path d="M18 12.5L27.5 30H23.2L18 20L12.8 30H8.5L18 12.5Z" fill="currentColor"/>
+                            <path d="M13.2 25.5H22.8" stroke="#FAF8F5" stroke-width="1.4"/>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span id="header-brand-main" class="font-serif text-3xl sm:text-[32px] font-semibold tracking-[0.06em] leading-none transition-colors">
+                            Adoor
+                        </span>
+                        <span id="header-brand-sub" class="text-[9px] tracking-[0.38em] text-bronze-400 uppercase mt-1 font-semibold">
+                            PROPERTIES
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Navigimi Desktop -->
+                <nav id="desktop-nav" class="hidden lg:flex items-center space-x-9 text-sm font-medium tracking-wide">
+                    <a href="#koleksioni" class="nav-link hover:text-bronze-500 transition py-2">Koleksioni</a>
+                    <a href="#sherbimet" class="nav-link hover:text-bronze-500 transition py-2">Shërbimet</a>
+                    <a href="#rreth-adoor" class="nav-link hover:text-bronze-500 transition py-2">Rreth Adoor</a>
+                    <a href="#listo-pronen" class="nav-link hover:text-bronze-500 transition py-2">Listo Pronën</a>
+                    <a href="#kontakt" class="nav-link hover:text-bronze-500 transition py-2">Kontakt</a>
+                </nav>
+
+                <!-- Butonat Djathtas -->
+                <div class="flex items-center gap-3">
+                    <!-- Butoni i Favoritëve -->
+                    <button onclick="toggleFavoritesFilter()" id="fav-header-btn" title="Pronat e ruajtura" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl border border-bronze-500/40 text-xs font-semibold hover:border-bronze-500 transition cursor-pointer">
+                        <i class="fa-regular fa-heart text-bronze-500" id="fav-header-icon"></i>
+                        <span id="fav-count-badge">0</span>
+                    </button>
+
+                    <!-- Butoni Spikatës: + Publiko Pronë -->
+                    <button onclick="openAdminGate()" class="inline-flex items-center gap-2 bronze-gradient text-obsidian font-bold text-xs uppercase tracking-wider px-4 sm:px-5 py-3 rounded-xl shadow-bronze transition cursor-pointer">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Publiko Pronë</span>
+                    </button>
+
+                    <!-- Menuja Mobile Button -->
+                    <button id="mobile-menu-btn" aria-label="Hap menunë" class="lg:hidden p-2.5 rounded-xl border border-bronze-500/40 text-bronze-400">
+                        <i class="fa-solid fa-bars text-lg" id="mobile-menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menuja Mobile -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-obsidian text-white border-t border-bronze-500/20 px-6 py-6 space-y-4">
+            <a href="#koleksioni" class="mobile-link block text-slate-200 hover:text-bronze-400 font-medium py-2 border-b border-white/10">Koleksioni</a>
+            <a href="#sherbimet" class="mobile-link block text-slate-200 hover:text-bronze-400 font-medium py-2 border-b border-white/10">Shërbimet</a>
+            <a href="#rreth-adoor" class="mobile-link block text-slate-200 hover:text-bronze-400 font-medium py-2 border-b border-white/10">Rreth Adoor</a>
+            <a href="#listo-pronen" class="mobile-link block text-slate-200 hover:text-bronze-400 font-medium py-2 border-b border-white/10">Listo Pronën</a>
+            <a href="#kontakt" class="mobile-link block text-slate-200 hover:text-bronze-400 font-medium py-2 border-b border-white/10">Kontakt</a>
+            <div class="pt-2 flex gap-3">
+                <button onclick="toggleFavoritesFilter(); closeMobileMenu();" class="flex-1 py-3 rounded-xl border border-bronze-500/40 text-bronze-300 text-xs font-semibold uppercase">
+                    <i class="fa-solid fa-heart mr-1"></i> Të Ruajturat (<span id="fav-count-mobile">0</span>)
+                </button>
+                <button onclick="openAdminGate(); closeMobileMenu();" class="flex-1 py-3 rounded-xl bronze-gradient text-obsidian text-xs font-bold uppercase">
+                    <i class="fa-solid fa-key mr-1"></i> Paneli i Agjentes
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- =========================================================================
+         SEKSIONI 1: HERO SECTION MADHËSHTOR & BAR I AVANCUAR KËRKIMI
+         ========================================================================= -->
+    <section id="kryefaqja" class="relative min-h-[92vh] flex items-center bg-obsidian text-white pt-24 pb-16 overflow-hidden">
+        <!-- Imazhi Arkitekturor me Zoom të Ngadaltë -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85" 
+                 onerror="this.src='https://placehold.co/1920x1080/111214/B8925A?text=Adoor+Properties'"
+                 alt="Rezidencë Arkitekturore Adoor Properties" 
+                 class="w-full h-full object-cover opacity-50 animate-hero">
+            <div class="absolute inset-0 bg-gradient-to-b from-obsidian/80 via-obsidian/55 to-obsidian"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="max-w-3xl space-y-6">
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-bronze-400/40 text-bronze-300 text-xs font-semibold tracking-[0.22em] uppercase">
+                    <span class="w-1.5 h-1.5 rounded-full bg-bronze-400"></span>
+                    <span>Kuratorë të Pronave Ekskluzive në Shqipëri & Bregdet</span>
+                </div>
+
+                <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-semibold leading-[1.06] tracking-tight text-white">
+                    Hapni Derën e <span class="bronze-text italic font-normal">Shtëpisë Suaj</span> të Ëndrrave.
+                </h1>
+
+                <p class="text-base sm:text-lg text-slate-200/90 font-light leading-relaxed max-w-2xl">
+                    Nga rezidencat ikonike në Tiranë deri tek vilat me pishinë infinity në Rivierën Shqiptare — përzgjedhim vetëm prona me standard të lartë arkitekturor dhe dokumentacion të garantuar.
+                </p>
+            </div>
+
+            <!-- BAR I AVANCUAR KËRKIMI (FILTER BAR) DIREKT MBI HERO -->
+            <div class="mt-12 bg-alabaster/95 backdrop-blur-xl rounded-3xl p-5 sm:p-6 shadow-2xl border border-bronze-500/35 text-obsidian">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Statusi</label>
+                        <select id="filter-status" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium text-obsidian focus:outline-none focus:border-bronze-500">
+                            <option value="all">Të gjitha</option>
+                            <option value="Në Shitje">Në Shitje</option>
+                            <option value="Me Qira">Me Qira</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Qyteti / Zona</label>
+                        <select id="filter-city" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium text-obsidian focus:outline-none focus:border-bronze-500">
+                            <option value="all">Të gjitha zonat</option>
+                            <option value="Tiranë">Tiranë</option>
+                            <option value="Palasë / Dhërmi">Palasë / Dhërmi</option>
+                            <option value="Sarandë">Sarandë</option>
+                            <option value="Vlorë">Vlorë</option>
+                            <option value="Gjiri i Lalzit">Gjiri i Lalzit</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Kategoria</label>
+                        <select id="filter-category" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium text-obsidian focus:outline-none focus:border-bronze-500">
+                            <option value="all">Të gjitha kategoritë</option>
+                            <option value="Vilë Luksoze">Vilë Luksoze</option>
+                            <option value="Apartament / Penthouse">Apartament / Penthouse</option>
+                            <option value="Komerciale">Komerciale</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Buxheti Maksimal (€)</label>
+                        <select id="filter-budget" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium text-obsidian focus:outline-none focus:border-bronze-500">
+                            <option value="99999999">Pa limit buxheti</option>
+                            <option value="3000">Deri në 3,000 € (Qira)</option>
+                            <option value="350000">Deri në 350,000 €</option>
+                            <option value="700000">Deri në 700,000 €</option>
+                            <option value="1200000">Deri në 1,200,000 €</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <button id="hero-search-btn" type="button" class="w-full bronze-gradient text-obsidian font-bold text-xs uppercase tracking-wider py-3.5 px-6 rounded-xl shadow-bronze transition flex items-center justify-center gap-2 cursor-pointer">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <span>Eksploro Pronat</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SEKSIONI 2: KOLEKSIONI I PRONAVE (GRID & DETAJET)
+         ========================================================================= -->
+    <section id="koleksioni" class="py-20 lg:py-28 bg-alabaster">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header i Koleksionit -->
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+                <div>
+                    <span class="text-bronze-600 font-bold text-xs uppercase tracking-[0.28em]">Portofoli i Kuruar</span>
+                    <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-obsidian mt-2">
+                        Koleksioni Ekskluziv Adoor
+                    </h2>
+                </div>
+
+                <!-- Filtrat e Shpejtë -->
+                <div class="flex flex-wrap items-center gap-2.5">
+                    <button data-quick="all" class="quick-pill bg-obsidian text-bronze-300 px-4 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition cursor-pointer">
+                        Të Gjitha (<span id="count-total">0</span>)
+                    </button>
+                    <button data-quick="Në Shitje" class="quick-pill bg-white border border-slate-200 text-obsidian hover:border-bronze-500 px-4 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition cursor-pointer">
+                        Në Shitje
+                    </button>
+                    <button data-quick="Me Qira" class="quick-pill bg-white border border-slate-200 text-obsidian hover:border-bronze-500 px-4 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition cursor-pointer">
+                        Me Qira
+                    </button>
+                    <button data-quick="Vilë Luksoze" class="quick-pill bg-white border border-slate-200 text-obsidian hover:border-bronze-500 px-4 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition cursor-pointer">
+                        Vila Luksoze
+                    </button>
+                    <button data-quick="Apartament / Penthouse" class="quick-pill bg-white border border-slate-200 text-obsidian hover:border-bronze-500 px-4 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition cursor-pointer">
+                        Apartamente & Penthouse
+                    </button>
+                </div>
+            </div>
+
+            <!-- Shiriti i Informacionit & Renditjes -->
+            <div class="flex flex-wrap justify-between items-center gap-4 pb-6 mb-8 border-b border-slate-200/80 text-sm text-slate-600">
+                <div class="flex items-center gap-3">
+                    <p>Po shfaqen <strong id="showing-count" class="text-obsidian">0</strong> prona</p>
+                    <span id="fav-filter-indicator" class="hidden px-3 py-1 rounded-full bg-bronze-500/15 text-bronze-700 text-xs font-semibold">
+                        Vetëm të ruajturat
+                    </span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <label for="sort-select" class="text-xs font-bold uppercase tracking-wider text-slate-500">Rendit:</label>
+                    <select id="sort-select" class="bg-white border border-slate-200 rounded-xl px-3.5 py-2 text-xs font-semibold text-obsidian focus:outline-none focus:border-bronze-500">
+                        <option value="newest">Më të rejat</option>
+                        <option value="price-asc">Çmimi: Nga më i ulëti</option>
+                        <option value="price-desc">Çmimi: Nga më i larti</option>
+                        <option value="area-desc">Sipërfaqja: Më e madhja</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Grid-i i Pronave -->
+            <div id="properties-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Kartat gjenerohen dinamikisht -->
+            </div>
+
+            <!-- Mesazhi kur nuk ka rezultate -->
+            <div id="empty-state" class="hidden text-center py-16 bg-white rounded-3xl border border-slate-200/80">
+                <i class="fa-regular fa-building text-4xl text-bronze-500 mb-4"></i>
+                <h3 class="font-serif text-3xl font-semibold text-obsidian">Nuk u gjet asnjë pronë me këto filtra</h3>
+                <p class="text-slate-500 text-sm mt-2 mb-6">Ndryshoni kriteret e kërkimit ose riktheni të gjithë koleksionin e Adoor Properties.</p>
+                <button onclick="resetFilters()" class="bronze-gradient text-obsidian font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-xl shadow-bronze cursor-pointer">
+                    Shfaq të Gjitha Pronat
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SEKSIONI 3: PSE ADOOR PROPERTIES (STATISTIKAT & SHTYLLAT E BESIMIT)
+         ========================================================================= -->
+    <section id="rreth-adoor" class="py-20 lg:py-28 bg-obsidian text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center mb-16">
+                <div class="lg:col-span-6 space-y-5">
+                    <span class="text-bronze-400 font-bold text-xs uppercase tracking-[0.28em]">Pse Adoor Properties</span>
+                    <h2 class="font-serif text-4xl sm:text-5xl font-semibold leading-tight text-white">
+                        Standardi i Ri i Ndërmjetësimit Luksoz në Shqipëri.
+                    </h2>
+                    <p class="text-slate-300 text-base font-light leading-relaxed">
+                        Tek <strong class="text-white font-semibold">Adoor Properties</strong>, ne besojmë se blerja ose shitja e një prone të rëndësishme është një vendim strategjik dhe emocional. Ne kombinojmë estetikën arkitekturore me rigorozitetin ligjor për të garantuar siguri maksimale.
+                    </p>
+                </div>
+
+                <!-- Statistikat Kryesore -->
+                <div class="lg:col-span-6 grid grid-cols-3 gap-4">
+                    <div class="bg-charcoal border border-bronze-500/25 rounded-3xl p-6 text-center">
+                        <div class="font-serif text-3xl sm:text-5xl font-bold bronze-text">€55M+</div>
+                        <p class="text-xs text-slate-300 mt-2 uppercase tracking-wider">Vlera e Portofolit</p>
+                    </div>
+                    <div class="bg-charcoal border border-bronze-500/25 rounded-3xl p-6 text-center">
+                        <div class="font-serif text-3xl sm:text-5xl font-bold bronze-text">120+</div>
+                        <p class="text-xs text-slate-300 mt-2 uppercase tracking-wider">Prona Ekskluzive</p>
+                    </div>
+                    <div class="bg-charcoal border border-bronze-500/25 rounded-3xl p-6 text-center">
+                        <div class="font-serif text-3xl sm:text-5xl font-bold bronze-text">340+</div>
+                        <p class="text-xs text-slate-300 mt-2 uppercase tracking-wider">Klientë të Kënaqur</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3 Shtyllat e Besimit -->
+            <div id="sherbimet" class="grid md:grid-cols-3 gap-8 pt-6 border-t border-white/10">
+                <div class="bg-charcoal/90 border border-bronze-500/20 rounded-3xl p-8 hover:border-bronze-400/50 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-bronze-500/15 text-bronze-400 flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-semibold text-white mb-3">Vlerësim & Konsulencë Juridike</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Çdo pronë verifikohet imtësisht në kartelën e pasurisë dhe certifikatën hipotekore, duke ofruar asistencë të plotë ligjore deri në nënshkrimin noterial.
+                    </p>
+                </div>
+
+                <div class="bg-charcoal/90 border border-bronze-500/20 rounded-3xl p-8 hover:border-bronze-400/50 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-bronze-500/15 text-bronze-400 flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-compass-drafting"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-semibold text-white mb-3">Prezantim Arkitekturor</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Kurim vizual i nivelit editorial dhe promovim i dedikuar tek blerësit më seriozë vendas, diaspora dhe investitorët ndërkombëtarë.
+                    </p>
+                </div>
+
+                <div class="bg-charcoal/90 border border-bronze-500/20 rounded-3xl p-8 hover:border-bronze-400/50 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-bronze-500/15 text-bronze-400 flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-semibold text-white mb-3">Diskrecion & Transparencë</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Negocim i strukturuar me integritet të lartë dhe konfidencialitet absolut për pronat private dhe portofolet e investimit.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         SEKSIONI 4: FORMULARI PËR PRONARËT (LISTO PRONËN TËNDE)
+         ========================================================================= -->
+    <section id="listo-pronen" class="py-20 lg:py-28 bg-linen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-editorial border border-bronze-500/25 overflow-hidden grid lg:grid-cols-12">
+                <div class="lg:col-span-5 relative min-h-[320px] bg-obsidian">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85" 
+                         onerror="this.src='https://placehold.co/800x1000/111214/B8925A?text=Adoor+Properties'"
+                         alt="Interior Arkitekturor" 
+                         class="w-full h-full object-cover opacity-55">
+                    <div class="absolute inset-0 p-8 sm:p-10 flex flex-col justify-end bg-gradient-to-t from-obsidian via-obsidian/55 to-transparent text-white">
+                        <span class="text-bronze-400 text-xs font-bold uppercase tracking-[0.22em]">Për Pronarët</span>
+                        <h3 class="font-serif text-3xl sm:text-4xl font-semibold mt-2 leading-tight">
+                            Dëshironi të Shisni apo të Jepni me Qira Pronën Tuaj?
+                        </h3>
+                        <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+                            Besojani pronën tuaj ekipit të Adoor Properties për vlerësim real të tregut, prezantim elitë dhe gjetjen e klientit të duhur.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 p-8 sm:p-12">
+                    <h4 class="font-serif text-3xl font-semibold text-obsidian mb-2">Listo Pronën Tek Adoor Properties</h4>
+                    <p class="text-slate-500 text-sm mb-6">Plotësoni të dhënat e mëposhtme dhe ne do t'ju kontaktojmë menjëherë për konsultën fillestare.</p>
+
+                    <form id="owner-form" class="space-y-4">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Emri dhe Mbiemri *</label>
+                                <input type="text" id="owner-name" required placeholder="Emri juaj" class="w-full bg-alabaster border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-bronze-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Telefoni / WhatsApp *</label>
+                                <input type="tel" id="owner-phone" required placeholder="+355 69 ..." class="w-full bg-alabaster border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-bronze-500">
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Qëllimi</label>
+                                <select id="owner-purpose" class="w-full bg-alabaster border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-bronze-500">
+                                    <option value="Shitje">Dua ta Shes</option>
+                                    <option value="Qira">Dua ta Jap me Qira</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Lloji i Pronës</label>
+                                <select id="owner-type" class="w-full bg-alabaster border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-bronze-500">
+                                    <option value="Vilë Luksoze">Vilë Luksoze</option>
+                                    <option value="Apartament / Penthouse">Apartament / Penthouse</option>
+                                    <option value="Komerciale">Komerciale / Zyrë</option>
+                                    <option value="Tokë">Tokë / Investim</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Qyteti / Zona *</label>
+                                <input type="text" id="owner-zone" required placeholder="p.sh. Tiranë / Palasë" class="w-full bg-alabaster border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-bronze-500">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Përshkrimi & Çmimi i Pretenduar</label>
+                            <textarea id="owner-details" rows="3" placeholder="Shkruani sipërfaqen në m², organizimin, statusin e hipotekës..." class="w-full bg-alabaster border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-bronze-500"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full sm:w-auto bronze-gradient text-obsidian font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-xl shadow-bronze transition cursor-pointer">
+                            <i class="fa-brands fa-whatsapp mr-1.5 text-sm"></i> Dërgo Kërkesën për Listim
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         FOOTER ELEGANT I ADOOR PROPERTIES
+         ========================================================================= -->
+    <footer id="kontakt" class="bg-obsidian text-slate-300 pt-20 pb-10 border-t border-bronze-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 pb-14 border-b border-white/10">
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="font-serif text-3xl font-semibold tracking-[0.06em] text-white">Adoor</span>
+                        <span class="text-[10px] tracking-[0.36em] text-bronze-400 uppercase font-semibold">PROPERTIES</span>
+                    </div>
+                    <p class="text-slate-400 text-sm max-w-md leading-relaxed">
+                        Kuratorë të pronave ekskluzive në Tiranë dhe Bregdetin Shqiptar. Një qasje arkitekturore, transparente dhe e dedikuar ndaj çdo klienti.
+                    </p>
+                    <div class="pt-2 flex flex-wrap gap-3">
+                        <a id="footer-wa-link" href="https://wa.me/355690000000" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider transition">
+                            <i class="fa-brands fa-whatsapp text-base"></i>
+                            <span>WhatsApp Direkt</span>
+                        </a>
+                        <a id="footer-ig-link" href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/20 hover:border-bronze-400 text-white text-xs font-bold uppercase tracking-wider transition">
+                            <i class="fa-brands fa-instagram text-base text-bronze-400"></i>
+                            <span>Instagram</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-xs uppercase tracking-[0.2em] mb-5">Eksploro</h4>
+                    <ul class="space-y-2.5 text-sm text-slate-400">
+                        <li><a href="#koleksioni" class="hover:text-bronze-400 transition">Koleksioni i Pronave</a></li>
+                        <li><a href="#sherbimet" class="hover:text-bronze-400 transition">Shërbimet & Konsulenca</a></li>
+                        <li><a href="#rreth-adoor" class="hover:text-bronze-400 transition">Rreth Adoor Properties</a></li>
+                        <li><a href="#listo-pronen" class="hover:text-bronze-400 transition">Listo Pronën Tënde</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-xs uppercase tracking-[0.2em] mb-5">Zyra & Kontakti</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-location-dot text-bronze-400 mt-1"></i>
+                            <span id="footer-address">Kompleksi Delijorgji / Blloku, Tiranë, Shqipëri</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-phone text-bronze-400"></i>
+                            <a id="footer-phone" href="tel:+355690000000" class="hover:text-white transition">+355 69 00 00 000</a>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-regular fa-envelope text-bronze-400"></i>
+                            <a id="footer-email" href="mailto:info@adoorproperties.al" class="hover:text-white transition">info@adoorproperties.al</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+                <p>&copy; 2026 Adoor Properties. Të gjitha të drejtat e rezervuara.</p>
+                <button onclick="openAdminGate()" class="inline-flex items-center gap-2 text-bronze-400 hover:text-bronze-300 font-semibold transition cursor-pointer">
+                    <i class="fa-solid fa-key text-[11px]"></i>
+                    <span>Paneli i Agjentes</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Butoni Lundrues WhatsApp -->
+    <a id="floating-wa" href="https://wa.me/355690000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="fixed bottom-6 right-6 z-30 w-14 h-14 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-2xl flex items-center justify-center text-2xl transition transform hover:scale-110">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- =========================================================================
+         MODAL 1: DETAJET E PRONËS (GALERI FOTOSH + KALKULATOR KREDIE + WHATSAPP)
+         ========================================================================= -->
+    <div id="property-modal" class="fixed inset-0 z-50 hidden bg-obsidian/85 backdrop-blur-md overflow-y-auto p-4 sm:p-6">
+        <div class="max-w-5xl mx-auto bg-white rounded-3xl overflow-hidden shadow-2xl border border-bronze-500/35 my-6 relative">
+            <button onclick="closePropertyModal()" aria-label="Mbyll" class="absolute top-4 right-4 z-20 w-11 h-11 rounded-full bg-obsidian/90 text-white hover:bg-bronze-500 hover:text-obsidian flex items-center justify-center transition cursor-pointer">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div id="property-modal-body"></div>
+        </div>
+    </div>
+
+    <!-- =========================================================================
+         MODAL 2: LOGIN PIN PËR PANELIN E AGJENTES
+         ========================================================================= -->
+    <div id="admin-pin-modal" class="fixed inset-0 z-50 hidden bg-obsidian/85 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-obsidian text-white rounded-3xl max-w-md w-full p-8 border border-bronze-500/40 shadow-2xl relative">
+            <button onclick="closeAdminGate()" class="absolute top-4 right-4 text-slate-400 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="w-12 h-12 rounded-2xl bg-bronze-500/20 text-bronze-400 flex items-center justify-center text-xl mb-5">
+                <i class="fa-solid fa-key"></i>
+            </div>
+            <h3 class="font-serif text-3xl font-semibold text-white">Studio e Agjentes</h3>
+            <p class="text-slate-400 text-sm mt-1.5 mb-6">
+                Vendosni kodin PIN për të publikuar, modifikuar ose menaxhuar pronat në Adoor Properties.
+            </p>
+            <form id="pin-form" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-bronze-300 mb-2">Kodi PIN</label>
+                    <input type="password" id="pin-input" required placeholder="••••" class="w-full bg-charcoal border border-slate-700 focus:border-bronze-400 rounded-xl px-4 py-3.5 text-white tracking-widest text-lg focus:outline-none">
+                    <p class="text-[11px] text-slate-400 mt-2">Hint për testim: <strong class="text-bronze-300">2026</strong> (mund të ndryshohet tek <code>ADOOR_CONFIG</code>).</p>
+                    <p id="pin-error" class="hidden text-xs text-rose-400 mt-2 font-semibold">Kodi PIN është i gabuar. Provoni përsëri.</p>
+                </div>
+                <button type="submit" class="w-full bronze-gradient text-obsidian font-bold text-xs uppercase tracking-wider py-4 rounded-xl shadow-bronze cursor-pointer">
+                    Hyr në Panelin e Menaxhimit
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- =========================================================================
+         MODAL 3: STUDIO E PLOTË E MENAXHIMIT & PUBLIKIMIT TË PRONAVE
+         ========================================================================= -->
+    <div id="admin-studio-modal" class="fixed inset-0 z-50 hidden bg-obsidian/90 backdrop-blur-md overflow-y-auto p-3 sm:p-6">
+        <div class="max-w-6xl mx-auto bg-alabaster rounded-3xl shadow-2xl border border-bronze-500/40 overflow-hidden my-4">
+            <!-- Header i Studios -->
+            <div class="bg-obsidian text-white px-6 sm:px-8 py-5 flex flex-wrap justify-between items-center gap-4 border-b border-bronze-500/30">
+                <div class="flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-xl bronze-gradient text-obsidian flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-building-circle-check"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-2xl font-semibold text-white leading-none">Adoor Properties — Studio e Publikimit</h3>
+                        <p class="text-xs text-bronze-300 mt-1">Shto prona me foto nga telefoni ose kompjuteri, ndrysho statusin dhe ruaj backup.</p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap items-center gap-2">
+                    <button onclick="exportPropertiesJSON()" class="px-3.5 py-2 rounded-xl bg-charcoal border border-bronze-500/40 hover:border-bronze-400 text-bronze-300 text-xs font-semibold transition cursor-pointer">
+                        <i class="fa-solid fa-download mr-1"></i> Eksporto Backup
+                    </button>
+                    <label class="px-3.5 py-2 rounded-xl bg-charcoal border border-bronze-500/40 hover:border-bronze-400 text-bronze-300 text-xs font-semibold transition cursor-pointer">
+                        <i class="fa-solid fa-upload mr-1"></i> Importo Backup
+                        <input type="file" id="import-json-input" accept=".json" class="hidden">
+                    </label>
+                    <button onclick="closeAdminStudio()" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold uppercase tracking-wider transition cursor-pointer">
+                        <i class="fa-solid fa-xmark mr-1"></i> Mbyll
+                    </button>
+                </div>
+            </div>
+
+            <div class="p-6 sm:p-8 grid lg:grid-cols-12 gap-8">
+                <!-- Kolona Majtas: Formulari i Shtimit / Modifikimit -->
+                <div class="lg:col-span-6 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <h4 id="studio-form-title" class="font-serif text-2xl font-semibold text-obsidian mb-4">Publiko Pronë të Re</h4>
+                    <form id="property-editor-form" class="space-y-4">
+                        <input type="hidden" id="edit-prop-id" value="">
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Titulli i Pronës *</label>
+                            <input type="text" id="input-title" required placeholder="p.sh. Vilë Arkitekturore me Pishinë Infinity në Palasë" class="w-full bg-alabaster border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-bronze-500">
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Qyteti *</label>
+                                <select id="input-city" class="w-full bg-alabaster border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-bronze-500">
+                                    <option value="Tiranë">Tiranë</option>
+                                    <option value="Palasë / Dhërmi">Palasë / Dhërmi</option>
+                                    <option value="Sarandë">Sarandë</option>
+                                    <option value="Vlorë">Vlorë</option>
+                                    <option value="Gjiri i Lalzit">Gjiri i Lalzit</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Lagjja / Zona *</label>
+                                <input type="text" id="input-neighborhood" required placeholder="p.sh. Liqeni i Thatë / Green Coast" class="w-full bg-alabaster border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-bronze-500">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-3">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Çmimi (€) *</label>
+                                <input type="number" id="input-price" required min="1" placeholder="450000" class="w-full bg-alabaster border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-bronze-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Statusi *</label>
+                                <select id="input-status" class="w-full bg-alabaster border border-slate-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-bronze-500">
+                                    <option value="Në Shitje">Në Shitje</option>
+                                    <option value="Me Qira">Me Qira</option>
+                                    <option value="E Shitur">E Shitur</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Kategoria *</label>
+                                <select id="input-category" class="w-full bg-alabaster border border-slate-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-bronze-500">
+                                    <option value="Vilë Luksoze">Vilë Luksoze</option>
+                                    <option value="Apartament / Penthouse">Apartament / Penthouse</option>
+                                    <option value="Komerciale">Komerciale</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-3">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Sipërfaqja (m²) *</label>
+                                <input type="number" id="input-area" required min="1" placeholder="180" class="w-full bg-alabaster border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-bronze-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Dhoma Gjumi</label>
+                                <input type="number" id="input-beds" min="0" value="3" class="w-full bg-alabaster border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-bronze-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Tualete</label>
+                                <input type="number" id="input-baths" min="0" value="2" class="w-full bg-alabaster border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-bronze-500">
+                            </div>
+                        </div>
+
+                        <!-- Ngarkimi i Shumë Fotove Direkt nga Telefoni/Kompjuteri + Kompresim Canvas -->
+                        <div class="bg-alabaster p-4 rounded-2xl border border-dashed border-bronze-500/55 space-y-2.5">
+                            <div class="flex justify-between items-center">
+                                <label class="block text-xs font-bold uppercase tracking-wider text-obsidian">
+                                    <i class="fa-solid fa-images text-bronze-600 mr-1"></i> Ngarko Foto (Nga Telefoni / Kompjuteri)
+                                </label>
+                                <span class="text-[10px] text-slate-500">Kompresim automatik</span>
+                            </div>
+                            <input type="file" id="input-photos-file" multiple accept="image/*" class="block w-full text-xs text-slate-600 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-obsidian file:text-bronze-300 hover:file:bg-charcoal cursor-pointer">
+                            
+                            <div class="text-[11px] text-slate-500">Ose vendosni një link (URL) fotoje:</div>
+                            <input type="url" id="input-photo-url" placeholder="https://..." class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-bronze-500">
+
+                            <!-- Parapamja e fotove të ngarkuara -->
+                            <div id="uploaded-thumbs-grid" class="grid grid-cols-4 gap-2 pt-2 hidden"></div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Karakteristikat (të ndara me presje)</label>
+                            <input type="text" id="input-features" placeholder="p.sh. Me Hipotekë, Pishinë Infinity, Pamje Deti, Post Parkimi, Ashensor" class="w-full bg-alabaster border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-bronze-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Përshkrimi i Detajuar *</label>
+                            <textarea id="input-desc" rows="3" required placeholder="Përshkruani arkitekturën, orientimin, punimet dhe avantazhet e pronës..." class="w-full bg-alabaster border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-bronze-500"></textarea>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <input type="checkbox" id="input-exclusive" checked class="w-4 h-4 accent-bronze-600 rounded">
+                            <label for="input-exclusive" class="text-xs font-semibold text-obsidian">Shëno me distinktivin "Ekskluzive"</label>
+                        </div>
+
+                        <div class="flex gap-3 pt-2">
+                            <button type="submit" id="submit-prop-btn" class="flex-1 bronze-gradient text-obsidian font-bold text-xs uppercase tracking-wider py-4 rounded-xl shadow-bronze cursor-pointer">
+                                <i class="fa-solid fa-cloud-arrow-up mr-1.5"></i> Publiko Pronën në Faqe
+                            </button>
+                            <button type="button" id="cancel-edit-btn" onclick="resetStudioForm()" class="hidden px-4 py-3 rounded-xl border border-slate-300 text-slate-600 text-xs font-bold uppercase cursor-pointer">
+                                Anulo
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Kolona Djathtas: Lista e Pronave për Menaxhim -->
+                <div class="lg:col-span-6 space-y-4">
+                    <div class="flex flex-wrap justify-between items-center gap-2">
+                        <h4 class="font-serif text-2xl font-semibold text-obsidian">Pronat Aktive (<span id="studio-count">0</span>)</h4>
+                        <button onclick="restoreDefaultProperties()" class="text-xs text-bronze-700 hover:underline font-semibold cursor-pointer">
+                            + Rikthe 6 Pronat Fillestare
+                        </button>
+                    </div>
+                    <div id="studio-properties-list" class="space-y-3 max-h-[700px] overflow-y-auto pr-1">
+                        <!-- Lista gjenerohet dinamikisht -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Njoftim Toast (Pa alert()) -->
+    <div id="toast-box" class="fixed bottom-6 left-6 z-50 hidden bg-obsidian text-white px-5 py-3.5 rounded-2xl shadow-2xl border border-bronze-500/40 flex items-center gap-3 text-sm">
+        <i class="fa-solid fa-circle-check text-bronze-400 text-lg"></i>
+        <span id="toast-message">Veprimi u krye me sukses!</span>
+    </div>
+
+    <!-- =========================================================================
+         JAVASCRIPT: LOGJIKA E PLOTË E ADOOR PROPERTIES
+         ========================================================================= -->
+    <script>
+        // 1. Përditësimi i të dhënave të brandit dhe kontaktit nga ADOOR_CONFIG
+        document.getElementById('header-brand-main').textContent = ADOOR_CONFIG.brandName;
+        document.getElementById('header-brand-sub').textContent = ADOOR_CONFIG.brandTagline;
+        document.getElementById('footer-address').textContent = ADOOR_CONFIG.address;
+        document.getElementById('footer-phone').textContent = ADOOR_CONFIG.phoneDisplay;
+        document.getElementById('footer-phone').href = `tel:${ADOOR_CONFIG.whatsappNumber}`;
+        document.getElementById('footer-email').textContent = ADOOR_CONFIG.email;
+        document.getElementById('footer-email').href = `mailto:${ADOOR_CONFIG.email}`;
+        document.getElementById('footer-ig-link').href = ADOOR_CONFIG.instagramUrl;
+
+        const baseWaLink = `https://wa.me/${ADOOR_CONFIG.whatsappNumber}?text=${encodeURIComponent('Përshëndetje Adoor Properties! Doja të merrja informacion për pronat tuaja ekskluzive.')}`;
+        document.getElementById('footer-wa-link').href = baseWaLink;
+        document.getElementById('floating-wa').href = baseWaLink;
+
+        // 2. 6 Pronat Fillestare të Kuruara me Kujdes
+        const INITIAL_PROPERTIES = [
+            {
+                id: "adoor-1",
+                code: "ADR-01",
+                title: "Vilë me Pishinë Infinity në Palasë — Green Coast",
+                city: "Palasë / Dhërmi",
+                neighborhood: "Green Coast Resort, Palasë",
+                price: 980000,
+                status: "Në Shitje",
+                category: "Vilë Luksoze",
+                area: 275,
+                beds: 3,
+                baths: 3,
+                exclusive: true,
+                images: [
+                    "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
+                ],
+                features: ["Pishinë Infinity", "Pamje Deti Jon", "Me Hipotekë", "Akses Direkt në Plazh", "2 Poste Parkimi"],
+                description: "Vilë arkitekturore buzë detit Jon në Palasë, me pishinë private infinity dhe tarracë panoramike. E investuar me materiale natyrale dhe sisteme inteligjente klimatizimi, ideale për pushime elitare ose investim të sigurt.",
+                createdAt: 1730000006
+            },
+            {
+                id: "adoor-2",
+                code: "ADR-02",
+                title: "Penthouse Panoramik tek Liqeni i Thatë",
+                city: "Tiranë",
+                neighborhood: "Liqeni i Thatë, Tiranë",
+                price: 640000,
+                status: "Në Shitje",
+                category: "Apartament / Penthouse",
+                area: 240,
+                beds: 3,
+                baths: 3,
+                exclusive: true,
+                images: [
+                    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85"
+                ],
+                features: ["Verandë 80m²", "Pamje nga Liqeni", "Me Hipotekë", "Ashensor Privat", "Parket Druri"],
+                description: "Penthouse ekskluziv me pamje të lirë mbi Liqenin e Thatë dhe Parkun e Madh. Organizohet në sallon madhështor me vetrata nga dyshemeja në tavan, kuzhinë moderne të veçuar, 3 dhoma gjumi dhe verandë relaksuese.",
+                createdAt: 1730000005
+            },
+            {
+                id: "adoor-3",
+                code: "ADR-03",
+                title: "Vilë Moderne me Oborr të Gjelbëruar në Rolling Hills",
+                city: "Tiranë",
+                neighborhood: "Rolling Hills, Lundër, Tiranë",
+                price: 1180000,
+                status: "Në Shitje",
+                category: "Vilë Luksoze",
+                area: 410,
+                beds: 4,
+                baths: 5,
+                exclusive: true,
+                images: [
+                    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=85",
+                    "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85"
+                ],
+                features: ["Oborr 550m²", "Siguri 24/7", "Me Hipotekë", "Oxhak Natyral", "Garazh i Mbyllur"],
+                description: "Rezidencë familjare në një nga komunitetet më të qeta dhe të sigurta të Tiranës. E projektuar me dritë natyrale gjatë gjithë ditës, hapësira të bollshme sociale dhe kopsht të kuruar me sistem ujitjeje automatik.",
+                createdAt: 1730000004
+            },
+            {
+                id: "adoor-4",
+                code: "ADR-04",
+                title: "Apartament Buzë Detit në Lungomare, Vlorë",
+                city: "Vlorë",
+                neighborhood: "Shëtitorja Lungomare, Vlorë",
+                price: 330000,
+                status: "Në Shitje",
+                category: "Apartament / Penthouse",
+                area: 148,
+                beds: 2,
+                baths: 2,
+                exclusive: false,
+                images: [
+                    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=85"
+                ],
+                features: ["Vija e Parë Det", "Ballkon Frontal", "Me Hipotekë", "Ashensor"],
+                description: "Apartament i kuruar në vijën e parë të Lungomares me pamje ballore nga gjiri i Vlorës. Dokumentacion i rregullt hipotekor dhe investim i shkëlqyer për banim ose qira afatshkurtër.",
+                createdAt: 1730000003
+            },
+            {
+                id: "adoor-5",
+                code: "ADR-05",
+                title: "Rezidencë Bregdetare mes Pishave në Gjirin e Lalzit",
+                city: "Gjiri i Lalzit",
+                neighborhood: "San Pietro / Gjiri i Lalzit",
+                price: 495000,
+                status: "Në Shitje",
+                category: "Vilë Luksoze",
+                area: 195,
+                beds: 3,
+                baths: 3,
+                exclusive: true,
+                images: [
+                    "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85"
+                ],
+                features: ["Mes Pishave", "Kopsht Privat", "Me Hipotekë", "200m nga Deti", "Parkim"],
+                description: "Vilë binjake e rrethuar nga gjelbërimi i pishave shekullore dhe vetëm pak hapa larg bregut të detit Adriatik. Mobilim bashkëkohor i përfshirë në çmim.",
+                createdAt: 1730000002
+            },
+            {
+                id: "adoor-6",
+                code: "ADR-06",
+                title: "Apartament Ekskluziv 2+1+2 me Qira në Bllok",
+                city: "Tiranë",
+                neighborhood: "Ish-Blloku, Tiranë",
+                price: 2100,
+                status: "Me Qira",
+                category: "Apartament / Penthouse",
+                area: 135,
+                beds: 2,
+                baths: 2,
+                exclusive: true,
+                images: [
+                    "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85"
+                ],
+                features: ["Mobilim Arkitekt", "Post Parkimi", "Sistem Chiller", "Pallat Elitar"],
+                description: "Apartament luksoz në zemër të Bllokut, i arreduar nga studio arkitekture me standarde maksimale komoditeti. Përfshin një post parkimi në katin -1.",
+                createdAt: 1730000001
+            }
+        ];
+
+        // 3. Menaxhimi i State & LocalStorage
+        const STORAGE_KEY = 'adoor_properties_db_v1';
+        const FAVS_KEY = 'adoor_favorites_v1';
+
+        let properties = loadProperties();
+        let favorites = JSON.parse(localStorage.getItem(FAVS_KEY) || '[]');
+        let quickFilter = 'all';
+        let onlyFavorites = false;
+        let pendingUploadedImages = []; // Fotot e kompresuara nga input[type=file]
+
+        function loadProperties() {
+            try {
+                const saved = localStorage.getItem(STORAGE_KEY);
+                if (saved) {
+                    const parsed = JSON.parse(saved);
+                    if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+                }
+            } catch (e) {
+                console.warn("Gabim gjatë leximit të localStorage:", e);
+            }
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(INITIAL_PROPERTIES));
+            return [...INITIAL_PROPERTIES];
+        }
+
+        function saveProperties() {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(properties));
+            } catch (e) {
+                showToast("Kujdes: Memoria e shfletuesit është plot. Përdorni më pak foto ose eksportoni Backup JSON.");
+            }
+        }
+
+        function formatEuro(amount) {
+            return new Intl.NumberFormat('de-DE').format(amount) + ' €';
+        }
+
+        // 4. Header Scroll Effect (Transparent -> Glassmorphic)
+        const headerEl = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                headerEl.classList.remove('header-transparent', 'text-white');
+                headerEl.classList.add('header-scrolled', 'text-obsidian');
+            } else {
+                headerEl.classList.add('header-transparent', 'text-white');
+                headerEl.classList.remove('header-scrolled', 'text-obsidian');
+            }
+        });
+
+        // 5. Renderimi i Koleksionit të Pronave
+        function renderAll() {
+            updateFavBadges();
+            renderGrid();
+            renderStudioList();
+            document.getElementById('count-total').textContent = properties.length;
+        }
+
+        function renderGrid() {
+            const grid = document.getElementById('properties-grid');
+            const emptyState = document.getElementById('empty-state');
+
+            const fStatus = document.getElementById('filter-status').value;
+            const fCity = document.getElementById('filter-city').value;
+            const fCat = document.getElementById('filter-category').value;
+            const fBudget = Number(document.getElementById('filter-budget').value);
+            const sortBy = document.getElementById('sort-select').value;
+
+            let list = properties.filter(p => {
+                if (onlyFavorites && !favorites.includes(p.id)) return false;
+                if (quickFilter !== 'all') {
+                    if (quickFilter === 'Në Shitje' || quickFilter === 'Me Qira') {
+                        if (p.status !== quickFilter) return false;
+                    } else if (p.category !== quickFilter) {
+                        return false;
+                    }
+                }
+                if (fStatus !== 'all' && p.status !== fStatus) return false;
+                if (fCity !== 'all' && p.city !== fCity) return false;
+                if (fCat !== 'all' && p.category !== fCat) return false;
+                if (Number(p.price) > fBudget) return false;
+                return true;
+            });
+
+            list.sort((a, b) => {
+                if (sortBy === 'price-asc') return Number(a.price) - Number(b.price);
+                if (sortBy === 'price-desc') return Number(b.price) - Number(a.price);
+                if (sortBy === 'area-desc') return Number(b.area) - Number(a.area);
+                return (b.createdAt || 0) - (a.createdAt || 0);
+            });
+
+            document.getElementById('showing-count').textContent = list.length;
+
+            if (list.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+            emptyState.classList.add('hidden');
+
+            grid.innerHTML = list.map(prop => {
+                const coverImg = (prop.images && prop.images[0]) ? prop.images[0] : 'https://placehold.co/800x600/111214/B8925A?text=Adoor+Properties';
+                const isFav = favorites.includes(prop.id);
+                const isSold = prop.status === 'E Shitur';
+                const statusBadgeStyle = isSold
+                    ? 'bg-rose-600 text-white'
+                    : (prop.status === 'Me Qira' ? 'bg-forest text-bronze-300' : 'bg-obsidian text-bronze-300');
+                const priceSuffix = prop.status === 'Me Qira' ? '<span class="text-xs font-normal text-slate-500"> / muaj</span>' : '';
+
+                return `
+                    <article class="property-card bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-editorial hover:border-bronze-500/55 transition duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="relative h-64 overflow-hidden bg-obsidian cursor-pointer" onclick="openPropertyModal('${prop.id}')">
+                                <img src="${coverImg}" 
+                                     onerror="this.src='https://placehold.co/800x600/111214/B8925A?text=Adoor+Properties'"
+                                     alt="${prop.title}" 
+                                     class="property-img w-full h-full object-cover transition duration-700 ${isSold ? 'opacity-75 grayscale-[30%]' : ''}">
+                                <div class="absolute inset-0 bg-gradient-to-t from-obsidian/75 via-transparent to-transparent"></div>
+
+                                <!-- Distinktivët Sipër Majtas -->
+                                <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+                                    <span class="${statusBadgeStyle} px-3 py-1 rounded-lg text-[11px] font-bold tracking-wider uppercase shadow">
+                                        ${prop.status}
+                                    </span>
+                                    ${prop.exclusive ? `
+                                        <span class="bronze-gradient text-obsidian px-2.5 py-1 rounded-lg text-[10px] font-bold tracking-wider uppercase shadow">
+                                            Ekskluzive
+                                        </span>
+                                    ` : ''}
+                                </div>
+
+                                <!-- Butoni Ruaj (Favorites) -->
+                                <button onclick="event.stopPropagation(); toggleFavorite('${prop.id}')" 
+                                        aria-label="Ruaj pronën"
+                                        title="${isFav ? 'Hiq nga të ruajturat' : 'Ruaj pronën'}"
+                                        class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur-md hover:bg-white flex items-center justify-center shadow transition cursor-pointer">
+                                    <i class="${isFav ? 'fa-solid fa-heart text-rose-600' : 'fa-regular fa-heart text-obsidian'} text-base"></i>
+                                </button>
+
+                                <!-- Vendndodhja dhe Numri i Fotove -->
+                                <div class="absolute bottom-3.5 left-4 right-4 flex justify-between items-center text-white text-xs">
+                                    <span class="flex items-center gap-1.5 truncate pr-2">
+                                        <i class="fa-solid fa-location-dot text-bronze-400"></i>
+                                        <span class="truncate">${prop.neighborhood}</span>
+                                    </span>
+                                    ${prop.images && prop.images.length > 1 ? `
+                                        <span class="bg-obsidian/80 px-2 py-0.5 rounded-md text-[10px] text-bronze-300 shrink-0">
+                                            <i class="fa-regular fa-images mr-1"></i>${prop.images.length}
+                                        </span>
+                                    ` : ''}
+                                </div>
+                            </div>
+
+                            <div class="p-6 space-y-4">
+                                <div>
+                                    <div class="flex justify-between items-baseline">
+                                        <span class="text-2xl font-bold text-obsidian">${formatEuro(prop.price)}${priceSuffix}</span>
+                                        <span class="text-[11px] font-mono text-slate-400">${prop.code || ''}</span>
+                                    </div>
+                                    <h3 onclick="openPropertyModal('${prop.id}')" class="font-serif text-2xl font-semibold text-obsidian hover:text-bronze-600 transition cursor-pointer mt-1 line-clamp-2 leading-snug">
+                                        ${prop.title}
+                                    </h3>
+                                </div>
+
+                                <div class="grid grid-cols-3 gap-2 py-3 border-y border-slate-100 text-xs text-slate-600 font-medium">
+                                    <div class="flex items-center gap-1.5">
+                                        <i class="fa-solid fa-vector-square text-bronze-600"></i>
+                                        <span>${prop.area} m²</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5">
+                                        <i class="fa-solid fa-bed text-bronze-600"></i>
+                                        <span>${prop.beds} Dhoma</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5">
+                                        <i class="fa-solid fa-bath text-bronze-600"></i>
+                                        <span>${prop.baths} Tualete</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-1 flex items-center gap-2.5">
+                            <button onclick="openPropertyModal('${prop.id}')" class="flex-1 bg-obsidian hover:bg-charcoal text-bronze-300 font-bold text-xs uppercase tracking-wider py-3.5 rounded-xl transition cursor-pointer">
+                                Shiko Detajet
+                            </button>
+                            <a href="https://wa.me/${ADOOR_CONFIG.whatsappNumber}?text=${encodeURIComponent(`Përshëndetje Adoor Properties! Jam i interesuar për pronën: "${prop.title}" (${prop.code || prop.city}) me çmim ${formatEuro(prop.price)}.`)}" 
+                               target="_blank" rel="noopener noreferrer" 
+                               aria-label="WhatsApp"
+                               class="w-12 h-11 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center text-lg transition">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        // 6. Modal-i i Detajeve të Pronës (Galeria + Kalkulatori i Kredisë + WhatsApp)
+        let activeModalImages = [];
+        let activeModalImgIndex = 0;
+
+        window.openPropertyModal = function(id) {
+            const prop = properties.find(p => p.id === id);
+            if (!prop) return;
+
+            activeModalImages = (prop.images && prop.images.length > 0)
+                ? prop.images
+                : ['https://placehold.co/900x700/111214/B8925A?text=Adoor+Properties'];
+            activeModalImgIndex = 0;
+
+            const waMessage = `Përshëndetje Adoor Properties! Doja të rezervoja një vizitë për pronën: "${prop.title}" (Kodi: ${prop.code || 'N/A'}) në ${prop.neighborhood}.`;
+            const waUrl = `https://wa.me/${ADOOR_CONFIG.whatsappNumber}?text=${encodeURIComponent(waMessage)}`;
+            const priceSuffix = prop.status === 'Me Qira' ? ' / muaj' : '';
+
+            const thumbsHtml = activeModalImages.length > 1 ? `
+                <div class="absolute bottom-4 left-4 right-4 flex gap-2 overflow-x-auto pb-1">
+                    ${activeModalImages.map((img, idx) => `
+                        <button onclick="setModalImage(${idx})" class="w-16 h-12 rounded-lg overflow-hidden border-2 ${idx === 0 ? 'border-bronze-400' : 'border-white/50'} shrink-0 cursor-pointer">
+                            <img src="${img}" class="w-full h-full object-cover">
+                        </button>
+                    `).join('')}
+                </div>
+            ` : '';
+
+            const featuresHtml = (prop.features || []).map(f => `
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-alabaster border border-slate-200 text-xs font-medium text-obsidian">
+                    <i class="fa-solid fa-check text-bronze-600"></i> ${f}
+                </span>
+            `).join('');
+
+            const mortgageHtml = prop.status === 'Në Shitje' ? `
+                <div class="bg-alabaster p-5 rounded-2xl border border-slate-200/90 space-y-3">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-obsidian">
+                        <i class="fa-solid fa-calculator text-bronze-600 mr-1.5"></i> Kalkulatori i Kredisë Bankare
+                    </h4>
+                    <div class="grid grid-cols-2 gap-3 text-xs">
+                        <div>
+                            <label class="text-slate-500 block mb-1">Parapagimi (%)</label>
+                            <input type="number" id="m-down" value="20" min="0" max="90" oninput="recalcMortgage(${prop.price})" class="w-full bg-white border border-slate-200 rounded-lg px-3 py-2 font-semibold">
+                        </div>
+                        <div>
+                            <label class="text-slate-500 block mb-1">Afati (Vite)</label>
+                            <input type="number" id="m-years" value="20" min="1" max="30" oninput="recalcMortgage(${prop.price})" class="w-full bg-white border border-slate-200 rounded-lg px-3 py-2 font-semibold">
+                        </div>
+                    </div>
+                    <div class="pt-2 flex justify-between items-center border-t border-slate-200">
+                        <span class="text-xs text-slate-600">Kësti mujor i vlerësuar (4.5% interes):</span>
+                        <span id="m-result" class="text-base font-bold text-obsidian"></span>
+                    </div>
+                </div>
+            ` : '';
+
+            document.getElementById('property-modal-body').innerHTML = `
+                <div class="grid lg:grid-cols-12">
+                    <div class="lg:col-span-6 bg-obsidian relative min-h-[320px] lg:min-h-[560px]">
+                        <img id="modal-main-image" src="${activeModalImages[0]}" alt="${prop.title}" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span class="bg-obsidian text-bronze-300 px-3 py-1 rounded-lg text-xs font-bold uppercase">${prop.status}</span>
+                            <span class="bg-white text-obsidian px-3 py-1 rounded-lg text-xs font-bold font-mono">${prop.code || ''}</span>
+                        </div>
+                        ${thumbsHtml}
+                    </div>
+
+                    <div class="lg:col-span-6 p-6 sm:p-9 space-y-6">
+                        <div>
+                            <p class="text-xs font-bold uppercase tracking-wider text-bronze-600">${prop.category} • ${prop.city}</p>
+                            <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-obsidian mt-1 leading-tight">${prop.title}</h2>
+                            <p class="text-sm text-slate-500 mt-2 flex items-center gap-1.5">
+                                <i class="fa-solid fa-location-dot text-bronze-600"></i> ${prop.neighborhood}
+                            </p>
+                        </div>
+
+                        <div class="flex flex-wrap items-center justify-between gap-4 py-4 border-y border-slate-100">
+                            <div>
+                                <span class="text-xs text-slate-400 block">Çmimi</span>
+                                <span class="text-3xl font-bold text-obsidian">${formatEuro(prop.price)}${priceSuffix}</span>
+                            </div>
+                            <div class="flex gap-5 text-sm font-semibold text-obsidian">
+                                <div><i class="fa-solid fa-vector-square text-bronze-600 mr-1"></i> ${prop.area} m²</div>
+                                <div><i class="fa-solid fa-bed text-bronze-600 mr-1"></i> ${prop.beds}</div>
+                                <div><i class="fa-solid fa-bath text-bronze-600 mr-1"></i> ${prop.baths}</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-obsidian mb-2">Përshkrimi Arkitekturor</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">${prop.description}</p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-obsidian mb-2.5">Karakteristikat</h4>
+                            <div class="flex flex-wrap gap-2">${featuresHtml}</div>
+                        </div>
+
+                        ${mortgageHtml}
+
+                        <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                            <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="flex-1 bronze-gradient text-obsidian font-bold text-xs uppercase tracking-wider py-4 px-5 rounded-xl shadow-bronze text-center flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-base"></i>
+                                <span>Rezervo Vizitë në WhatsApp</span>
+                            </a>
+                            <a href="tel:${ADOOR_CONFIG.whatsappNumber}" class="px-5 py-4 rounded-xl border border-slate-300 hover:border-obsidian text-obsidian font-bold text-xs uppercase tracking-wider text-center">
+                                <i class="fa-solid fa-phone mr-1"></i> Telefono
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('property-modal').classList.remove('hidden');
+            if (prop.status === 'Në Shitje') recalcMortgage(prop.price);
+        };
+
+        window.setModalImage = function(idx) {
+            if (!activeModalImages[idx]) return;
+            document.getElementById('modal-main-image').src = activeModalImages[idx];
+        };
+
+        window.closePropertyModal = function() {
+            document.getElementById('property-modal').classList.add('hidden');
+        };
+
+        window.recalcMortgage = function(price) {
+            const down = Number(document.getElementById('m-down')?.value || 20);
+            const years = Number(document.getElementById('m-years')?.value || 20);
+            const principal = price * (1 - down / 100);
+            const rate = 0.045 / 12;
+            const months = years * 12;
+            const payment = months > 0 ? (principal * rate) / (1 - Math.pow(1 + rate, -months)) : 0;
+            const out = document.getElementById('m-result');
+            if (out) out.textContent = formatEuro(Math.round(payment)) + ' / muaj';
+        };
+
+        // 7. Favoritet (Ruaj Pronën)
+        window.toggleFavorite = function(id) {
+            if (favorites.includes(id)) {
+                favorites = favorites.filter(f => f !== id);
+                showToast("Prona u hoq nga të ruajturat.");
+            } else {
+                favorites.push(id);
+                showToast("Prona u ruajt tek të preferuarat!");
+            }
+            localStorage.setItem(FAVS_KEY, JSON.stringify(favorites));
+            renderAll();
+        };
+
+        window.toggleFavoritesFilter = function() {
+            onlyFavorites = !onlyFavorites;
+            const indicator = document.getElementById('fav-filter-indicator');
+            const icon = document.getElementById('fav-header-icon');
+            if (onlyFavorites) {
+                indicator.classList.remove('hidden');
+                icon.className = 'fa-solid fa-heart text-rose-500';
+                document.getElementById('koleksioni').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                indicator.classList.add('hidden');
+                icon.className = 'fa-regular fa-heart text-bronze-500';
+            }
+            renderGrid();
+        };
+
+        function updateFavBadges() {
+            document.getElementById('fav-count-badge').textContent = favorites.length;
+            document.getElementById('fav-count-mobile').textContent = favorites.length;
+        }
+
+        // 8. PANELI I AGJENTES (PIN GATE & STUDIO E MENAXHIMIT)
+        window.openAdminGate = function() {
+            if (sessionStorage.getItem('adoor_studio_unlocked') === 'true') {
+                document.getElementById('admin-studio-modal').classList.remove('hidden');
+            } else {
+                document.getElementById('admin-pin-modal').classList.remove('hidden');
+                document.getElementById('pin-input').focus();
+            }
+        };
+
+        window.closeAdminGate = function() {
+            document.getElementById('admin-pin-modal').classList.add('hidden');
+            document.getElementById('pin-error').classList.add('hidden');
+        };
+
+        window.closeAdminStudio = function() {
+            document.getElementById('admin-studio-modal').classList.add('hidden');
+        };
+
+        document.getElementById('pin-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const val = document.getElementById('pin-input').value.trim();
+            if (val === ADOOR_CONFIG.adminPin) {
+                sessionStorage.setItem('adoor_studio_unlocked', 'true');
+                closeAdminGate();
+                document.getElementById('admin-studio-modal').classList.remove('hidden');
+                showToast("Mirësevini në Studion e Adoor Properties!");
+            } else {
+                document.getElementById('pin-error').classList.remove('hidden');
+            }
+        });
+
+        // Kompresimi Automatik i Fotove me HTML5 Canvas
+        document.getElementById('input-photos-file').addEventListener('change', async function(e) {
+            const files = Array.from(e.target.files || []);
+            if (files.length === 0) return;
+
+            showToast("Duke optimizuar fotot...");
+            for (const file of files) {
+                const compressed = await compressImageToBase64(file, 960, 0.76);
+                if (compressed) pendingUploadedImages.push(compressed);
+            }
+            renderUploadedThumbs();
+            showToast(`${pendingUploadedImages.length} foto u përgatitën me sukses!`);
+        });
+
+        function compressImageToBase64(file, maxWidth, quality) {
+            return new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.onload = (ev) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        const canvas = document.createElement('canvas');
+                        const ratio = Math.min(1, maxWidth / img.width);
+                        canvas.width = img.width * ratio;
+                        canvas.height = img.height * ratio;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                        resolve(canvas.toDataURL('image/jpeg', quality));
+                    };
+                    img.onerror = () => resolve(null);
+                    img.src = ev.target.result;
+                };
+                reader.onerror = () => resolve(null);
+                reader.readAsDataURL(file);
+            });
+        }
+
+        function renderUploadedThumbs() {
+            const wrap = document.getElementById('uploaded-thumbs-grid');
+            if (pendingUploadedImages.length === 0) {
+                wrap.classList.add('hidden');
+                wrap.innerHTML = '';
+                return;
+            }
+            wrap.classList.remove('hidden');
+            wrap.innerHTML = pendingUploadedImages.map((src, i) => `
+                <div class="relative h-16 rounded-xl overflow-hidden border border-slate-200 group">
+                    <img src="${src}" class="w-full h-full object-cover">
+                    <button type="button" onclick="removePendingImage(${i})" class="absolute top-1 right-1 w-5 h-5 rounded-full bg-rose-600 text-white text-[10px] flex items-center justify-center cursor-pointer">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        window.removePendingImage = function(idx) {
+            pendingUploadedImages.splice(idx, 1);
+            renderUploadedThumbs();
+        };
+
+        // Ruajtja e Pronës së Re ose të Modifikuar
+        document.getElementById('property-editor-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const editId = document.getElementById('edit-prop-id').value;
+            const existing = editId ? properties.find(p => p.id === editId) : null;
+            const urlInput = document.getElementById('input-photo-url').value.trim();
+
+            let finalImages = [...pendingUploadedImages];
+            if (urlInput) finalImages.unshift(urlInput);
+            if (finalImages.length === 0 && existing && existing.images) {
+                finalImages = [...existing.images];
+            }
+            if (finalImages.length === 0) {
+                finalImages = ['https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85'];
+            }
+
+            const rawFeatures = document.getElementById('input-features').value.trim();
+            const parsedFeatures = rawFeatures ? rawFeatures.split(',').map(s => s.trim()).filter(Boolean) : ['Me Hipotekë'];
+
+            const propData = {
+                id: editId || ('adoor-' + Date.now()),
+                code: existing ? existing.code : ('ADR-' + String(properties.length + 1).padStart(2, '0')),
+                title: document.getElementById('input-title').value.trim(),
+                city: document.getElementById('input-city').value,
+                neighborhood: document.getElementById('input-neighborhood').value.trim(),
+                price: Number(document.getElementById('input-price').value),
+                status: document.getElementById('input-status').value,
+                category: document.getElementById('input-category').value,
+                area: Number(document.getElementById('input-area').value),
+                beds: Number(document.getElementById('input-beds').value || 0),
+                baths: Number(document.getElementById('input-baths').value || 0),
+                exclusive: document.getElementById('input-exclusive').checked,
+                images: finalImages,
+                features: parsedFeatures,
+                description: document.getElementById('input-desc').value.trim(),
+                createdAt: existing ? existing.createdAt : Date.now()
+            };
+
+            if (editId) {
+                properties = properties.map(p => p.id === editId ? propData : p);
+                showToast("Ndryshimet e pronës u ruajtën!");
+            } else {
+                properties.unshift(propData);
+                showToast("Prona e re u publikua në Adoor Properties!");
+            }
+
+            saveProperties();
+            resetStudioForm();
+            renderAll();
+        });
+
+        window.resetStudioForm = function() {
+            document.getElementById('property-editor-form').reset();
+            document.getElementById('edit-prop-id').value = '';
+            pendingUploadedImages = [];
+            renderUploadedThumbs();
+            document.getElementById('studio-form-title').textContent = 'Publiko Pronë të Re';
+            document.getElementById('submit-prop-btn').innerHTML = '<i class="fa-solid fa-cloud-arrow-up mr-1.5"></i> Publiko Pronën në Faqe';
+            document.getElementById('cancel-edit-btn').classList.add('hidden');
+        };
+
+        window.editStudioProperty = function(id) {
+            const p = properties.find(item => item.id === id);
+            if (!p) return;
+            document.getElementById('edit-prop-id').value = p.id;
+            document.getElementById('input-title').value = p.title;
+            document.getElementById('input-city').value = p.city;
+            document.getElementById('input-neighborhood').value = p.neighborhood;
+            document.getElementById('input-price').value = p.price;
+            document.getElementById('input-status').value = p.status;
+            document.getElementById('input-category').value = p.category;
+            document.getElementById('input-area').value = p.area;
+            document.getElementById('input-beds').value = p.beds;
+            document.getElementById('input-baths').value = p.baths;
+            document.getElementById('input-exclusive').checked = !!p.exclusive;
+            document.getElementById('input-features').value = (p.features || []).join(', ');
+            document.getElementById('input-desc').value = p.description;
+
+            pendingUploadedImages = [...(p.images || [])];
+            renderUploadedThumbs();
+
+            document.getElementById('studio-form-title').textContent = `Modifiko Pronën (${p.code || ''})`;
+            document.getElementById('submit-prop-btn').innerHTML = '<i class="fa-solid fa-check mr-1.5"></i> Ruaj Ndryshimet';
+            document.getElementById('cancel-edit-btn').classList.remove('hidden');
+        };
+
+        window.cyclePropertyStatus = function(id) {
+            const order = ['Në Shitje', 'Me Qira', 'E Shitur'];
+            properties = properties.map(p => {
+                if (p.id !== id) return p;
+                const next = order[(order.indexOf(p.status) + 1) % order.length];
+                showToast(`Statusi u ndryshua në: ${next}`);
+                return { ...p, status: next };
+            });
+            saveProperties();
+            renderAll();
+        };
+
+        window.deleteStudioProperty = function(id) {
+            properties = properties.filter(p => p.id !== id);
+            saveProperties();
+            renderAll();
+            showToast("Prona u fshi nga koleksioni.");
+        };
+
+        window.restoreDefaultProperties = function() {
+            properties = [...INITIAL_PROPERTIES];
+            saveProperties();
+            renderAll();
+            showToast("6 pronat fillestare u rikthyen!");
+        };
+
+        // Eksport / Import Backup JSON
+        window.exportPropertiesJSON = function() {
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(properties, null, 2));
+            const a = document.createElement('a');
+            a.href = dataStr;
+            a.download = `adoor-properties-backup-${new Date().toISOString().slice(0, 10)}.json`;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            showToast("Skedari Backup JSON u shkarkua!");
+        };
+
+        document.getElementById('import-json-input').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+                try {
+                    const imported = JSON.parse(ev.target.result);
+                    if (Array.isArray(imported)) {
+                        properties = imported;
+                        saveProperties();
+                        renderAll();
+                        showToast(`U importuan ${imported.length} prona me sukses!`);
+                    }
+                } catch (err) {
+                    showToast("Skedari JSON nuk është i vlefshëm.");
+                }
+            };
+            reader.readAsText(file);
+        });
+
+        function renderStudioList() {
+            const listEl = document.getElementById('studio-properties-list');
+            document.getElementById('studio-count').textContent = properties.length;
+
+            listEl.innerHTML = properties.map(p => {
+                const thumb = (p.images && p.images[0]) ? p.images[0] : 'https://placehold.co/200x200/111214/B8925A?text=Adoor';
+                return `
+                    <div class="bg-white p-3.5 rounded-2xl border border-slate-200 flex items-center justify-between gap-3 shadow-sm">
+                        <div class="flex items-center gap-3 min-w-0">
+                            <img src="${thumb}" alt="${p.title}" class="w-16 h-16 rounded-xl object-cover shrink-0 bg-obsidian">
+                            <div class="min-w-0">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-obsidian text-bronze-300">${p.code || 'ADR'}</span>
+                                    <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-linen text-obsidian">${p.status}</span>
+                                </div>
+                                <h5 class="font-bold text-sm text-obsidian truncate mt-1">${p.title}</h5>
+                                <p class="text-xs text-slate-500">${formatEuro(p.price)} • ${p.city}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-1.5 shrink-0">
+                            <button onclick="cyclePropertyStatus('${p.id}')" title="Ndrysho Statusin (Në Shitje / Me Qira / E Shitur)" class="p-2 rounded-lg bg-amber-50 text-amber-700 hover:bg-amber-100 text-xs cursor-pointer">
+                                <i class="fa-solid fa-tag"></i>
+                            </button>
+                            <button onclick="editStudioProperty('${p.id}')" title="Modifiko" class="p-2 rounded-lg bg-slate-100 text-obsidian hover:bg-slate-200 text-xs cursor-pointer">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                            <button onclick="deleteStudioProperty('${p.id}')" title="Fshi" class="p-2 rounded-lg bg-rose-50 text-rose-600 hover:bg-rose-100 text-xs cursor-pointer">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // 9. Filtrat, Kërkimi & Formulari i Pronarëve
+        document.querySelectorAll('.quick-pill').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.quick-pill').forEach(b => {
+                    b.className = 'quick-pill bg-white border border-slate-200 text-obsidian hover:border-bronze-500 px-4 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition cursor-pointer';
+                });
+                btn.className = 'quick-pill bg-obsidian text-bronze-300 px-4 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition cursor-pointer';
+                quickFilter = btn.dataset.quick;
+                renderGrid();
+            });
+        });
+
+        document.getElementById('hero-search-btn').addEventListener('click', () => {
+            renderGrid();
+            document.getElementById('koleksioni').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.getElementById('sort-select').addEventListener('change', renderGrid);
+
+        window.resetFilters = function() {
+            quickFilter = 'all';
+            onlyFavorites = false;
+            document.getElementById('fav-filter-indicator').classList.add('hidden');
+            document.getElementById('filter-status').value = 'all';
+            document.getElementById('filter-city').value = 'all';
+            document.getElementById('filter-category').value = 'all';
+            document.getElementById('filter-budget').value = '99999999';
+            renderGrid();
+        };
+
+        document.getElementById('owner-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('owner-name').value.trim();
+            const phone = document.getElementById('owner-phone').value.trim();
+            const purpose = document.getElementById('owner-purpose').value;
+            const type = document.getElementById('owner-type').value;
+            const zone = document.getElementById('owner-zone').value.trim();
+            const details = document.getElementById('owner-details').value.trim();
+
+            const msg = `Përshëndetje Adoor Properties! Jam ${name} (${phone}). Kam një pronë (${type}) për ${purpose} në ${zone}. Detaje: ${details}`;
+            window.open(`https://wa.me/${ADOOR_CONFIG.whatsappNumber}?text=${encodeURIComponent(msg)}`, '_blank');
+            e.target.reset();
+            showToast("Kërkesa juaj u hap në WhatsApp!");
+        });
+
+        // Menuja Mobile
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        window.closeMobileMenu = function() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        };
+        document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', closeMobileMenu));
+
+        function showToast(text) {
+            const box = document.getElementById('toast-box');
+            document.getElementById('toast-message').textContent = text;
+            box.classList.remove('hidden');
+            setTimeout(() => box.classList.add('hidden'), 3500);
+        }
+
+        // Nisja fillestare
+        renderAll();
+    </script>
+</body>
+</html>
+```
